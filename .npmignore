@@ -1,0 +1,4 @@
+node_modules/
+.husky/
+commitlint.config.mjs
+eslint.config.mjs
