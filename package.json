@@ -1,0 +1,29 @@
+{
+  "name": "eslint-config-endor",
+  "version": "1.0.0",
+  "description": "eslint configuration for endor standard",
+  "main": "index.mjs",
+  "scripts": {
+    "lint": "eslint",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "endor"
+  ],
+  "author": "AymericHenouille",
+  "license": "ISC",
+  "dependencies": {
+    "typescript-eslint": ">= 8"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "commitlint": "^19.6.1",
+    "husky": "^9.1.7"
+  }
+}
