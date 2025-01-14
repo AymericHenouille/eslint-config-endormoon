@@ -3,7 +3,7 @@ import esConfig from '@eslint/js';
 import { config, configs } from 'typescript-eslint';
 
 /**
- * Default configuration for the Endor eslint standard.
+ * Default configuration for the Endormoon eslint standard.
  */
 export default config({
   extends: [

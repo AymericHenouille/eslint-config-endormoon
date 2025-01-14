@@ -1,7 +1,7 @@
 import { ConfigArray } from 'typescript-eslint';
 
 /**
- * The default config that respect the Endor standard.
+ * The default config that respect the Endormoon standard.
  */
 declare const config: ConfigArray;
 
