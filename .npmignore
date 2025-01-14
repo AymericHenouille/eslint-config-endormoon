@@ -1,4 +1,5 @@
 node_modules
 .husky
+*.tgz
 commitlint.config.mjs
 eslint.config.mjs
