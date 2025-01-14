@@ -5,6 +5,6 @@ import endor from './index.mjs';
  * Lint rules used to lint the current rules. 🙃
  */
 export default config({
-  files: ['*.ts', '*.d.ts'],
+  files: ['*.ts', '*.d.ts', '*.mjs'],
   extends: [endor],
 });
