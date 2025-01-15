@@ -28,6 +28,10 @@ jobs:
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'display output version'
+        run: |
+          echo ${{ steps.current_version_step.current_version }}
+          echo ${{ steps.last_release_version_step.tag_name }}
       - name: 'Pack package'
         if: ${{ steps.current_version_step.current_version != steps.last_release_version_step.tag_name }} 
         run: |
