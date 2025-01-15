@@ -19,7 +19,7 @@ jobs:
         id: current_version_step
         run: |
           version=$(node -p "require('./package.json').version")
-          echo "::set-output name=current_version::$version"
+          echo "current_version=$version" >> $GITHUB_OUTPUT
       - name: 'Extract last release version'
         id: last_release_version_step
         uses: joutvhu/get-release@v1
