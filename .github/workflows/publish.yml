@@ -1,8 +1,9 @@
-name: 'Create a release'
+name: 'Publish release to npm'
 
 on:
   release:
     types: [prereleased]
+    branch: [master]
 
 jobs:
   publish:

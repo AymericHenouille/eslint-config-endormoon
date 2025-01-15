@@ -1,4 +1,4 @@
-name: 'Check package version'
+name: 'Create release'
 
 on:
   push:
