@@ -28,13 +28,10 @@ jobs:
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: 'display outputs version'
-        run: |
-          echo ${{ steps.current_version_step.outputs.current_version }}
-          echo ${{ steps.last_release_version_step.outputs.tag_name }}
       - name: 'Pack package'
         if: ${{ steps.current_version_step.outputs.current_version != steps.last_release_version_step.outputs.tag_name }} 
         run: |
+          npm install
           npm pack
       - name: 'Create release'
         if: ${{ steps.current_version_step.outputs.current_version != steps.last_release_version_step.outputs.tag_name }} 
