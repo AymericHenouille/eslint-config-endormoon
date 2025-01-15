@@ -28,22 +28,22 @@ jobs:
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: 'display output version'
+      - name: 'display outputs version'
         run: |
-          echo ${{ steps.current_version_step.current_version }}
-          echo ${{ steps.last_release_version_step.tag_name }}
+          echo ${{ steps.current_version_step.outputs.current_version }}
+          echo ${{ steps.last_release_version_step.outputs.tag_name }}
       - name: 'Pack package'
-        if: ${{ steps.current_version_step.current_version != steps.last_release_version_step.tag_name }} 
+        if: ${{ steps.current_version_step.outputs.current_version != steps.last_release_version_step.outputs.tag_name }} 
         run: |
           npm pack
       - name: 'Create release'
-        if: ${{ steps.current_version_step.current_version != steps.last_release_version_step.tag_name }} 
+        if: ${{ steps.current_version_step.outputs.current_version != steps.last_release_version_step.outputs.tag_name }} 
         uses: softprops/action-gh-release@v2
         with:
           repository: ${{ github.repository }}
           token: ${{ secrets.RELEASE_ACCESS_TOKEN }}
-          tag_name: ${{ steps.current_version_step.current_version }}
-          name: ${{ steps.current_version_step.current_version }}
+          tag_name: ${{ steps.current_version_step.outputs.current_version }}
+          name: ${{ steps.current_version_step.outputs.current_version }}
           prerelease: true
           generate_release_notes: true
           files: |
