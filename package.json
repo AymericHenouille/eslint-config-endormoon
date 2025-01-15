@@ -16,6 +16,9 @@
   ],
   "author": "AymericHenouille",
   "license": "ISC",
+  "engines": {
+    "node": ">= 20"
+  },
   "dependencies": {
     "typescript-eslint": ">= 8"
   },
