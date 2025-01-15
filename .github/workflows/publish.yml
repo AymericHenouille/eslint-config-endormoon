@@ -1,10 +1,29 @@
 name: 'Create a release'
 
 on:
-  workflow_dispatch:
+  release:
+    types: [prereleased]
 
 jobs:
-  hello:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - run: echo hello
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+      - name: 'Install nodejs'
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'package.json'
+      - name: 'Publish to npm'
+        run: |
+          npm install
+          npm publish
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Edit Release
+        uses: irongut/EditRelease@v1.2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          id: ${{ github.event.release.id }}
+          prerelease: false
+              

@@ -3,21 +3,24 @@
   "version": "1.0.0",
   "description": "eslint configuration for endormoon standard",
   "homepage": "https://github.com/AymericHenouille/eslint-config-endormoon#readme",
-	"repository": "AymericHenouille/eslint-config-endormoon",
   "main": "index.mjs",
-  "scripts": {
-    "lint": "eslint",
-    "prepare": "husky"
-  },
   "keywords": [
     "eslint",
     "eslintconfig",
     "endormoon"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AymericHenouille/eslint-config-endormoon"
+  },
   "author": "AymericHenouille",
   "license": "ISC",
   "engines": {
     "node": ">= 20"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "prepare": "husky"
   },
   "dependencies": {
     "typescript-eslint": ">= 8"
