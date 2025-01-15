@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-endormoon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "eslint configuration for endormoon standard",
   "homepage": "https://github.com/AymericHenouille/eslint-config-endormoon#readme",
   "main": "index.mjs",
